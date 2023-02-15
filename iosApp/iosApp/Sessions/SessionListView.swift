@@ -33,9 +33,9 @@ struct SessionListView: View {
                                                         
                             let sessions = sessionUiState.sessionsByStartTimeList[selectedDateIndex][key] ?? []
                             ForEach(sessions, id: \.self) { session in
-                                VStack {
+                                VStack {    
                                     if (!session.isBreak()) {
-                                        NavigationLink(destination: SessionDetailsView(session: session)) {
+                                        NavigationLink(destination: SessionDetailsViewShared(session: session)) {
                                             SessionView(session: session)
                                         }
                                     } else {
